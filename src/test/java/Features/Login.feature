@@ -8,8 +8,8 @@ Feature: Login functionality
     Then User should be login successfully
 
 
-    @Smoke
-    Scenario: User should not be able to login with invalid username and password
-      Given Navigate to Amazon
-      When Enter invalid username and password
-      Then User should not be able to login
+  @Smoke
+  Scenario: User should not be able to login with invalid username and password
+    Given Navigate to Amazon
+    When Enter invalid username and password
+    Then User should not be able to login

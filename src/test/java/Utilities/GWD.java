@@ -3,7 +3,6 @@ package Utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -49,7 +48,7 @@ public class GWD {
         driver=null;
         threadDriver.set(driver);
 
-        //localden bosalt sonra ata
+
     }
 
     public static void setThreadBrowserName (String browserName) {

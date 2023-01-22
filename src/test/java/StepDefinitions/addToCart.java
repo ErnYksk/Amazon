@@ -14,7 +14,7 @@ public class addToCart {
     DialogContent dc=new DialogContent();
     @Given("Search in item")
     public void searchInItem() {
-        dc.findAndSend("searchInput","coffee");
+        dc.findAndSend("searchInput","teddy bear");
         dc.findAndClick("searchButton");
 
     }
@@ -38,5 +38,6 @@ public class addToCart {
 
     @And("Item should be appeared in cart")
     public void itemShouldBeAppearedInCart() {
+        dc.findAndContainsText("addedAssertion","Added");
     }
 }

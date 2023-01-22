@@ -33,21 +33,22 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//h4[text()='Important Message!']")
     private WebElement invalidDataLogin;
 
-
-    @FindBy(xpath = "//*[text()='KABUL ET']")
-    private WebElement acceptCookies;
-
-    @FindBy(xpath = "//input[@placeholder='Aradığınız ürün, kategori veya markayı yazınız']")
+    @FindBy(id = "twotabsearchtextbox")
     private WebElement searchInput;
 
-    @FindBy(xpath = "//i[@data-testid='search-icon']")
+    @FindBy(id = "nav-search-submit-button")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//div[@class='p-card-wrppr with-campaign-view']")
+    @FindBy(css = "[data-component-type='s-search-result']")
     private List<WebElement> searchResults;
 
-    @FindBy(xpath = "//button[@class='add-to-basket']//div[text()='Sepete Ekle']")
+    @FindBy(id = "add-to-cart-button")
     private WebElement addButton;
+
+    @FindBy(xpath = "(//*[text()='Added to Cart'])[2]")
+    private WebElement addedAssertion;
+
+
     WebElement myElement;
 
 
@@ -103,6 +104,9 @@ public class DialogContent extends Parent {
                 break;
             case "invalidDataLogin":
                 myElement = invalidDataLogin;
+                break;
+            case "addedAssertion":
+                myElement = addedAssertion;
                 break;
         }
 
