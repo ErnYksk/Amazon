@@ -18,9 +18,9 @@ public class LoginFunc {
     @When("Enter username and password and click login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
         dc.findAndClick("loginButton");
-        dc.findAndSend("email","erenyksek@gmail.com");
+        dc.findAndSend("email","enterEmail");
         dc.findAndClick("submitEmail");
-        dc.findAndSend("password","Eren1657.");
+        dc.findAndSend("password","enterPassword");
         dc.findAndClick("submitLogin");
 
     }
