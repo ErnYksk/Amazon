@@ -9,42 +9,41 @@ import io.cucumber.java.en.When;
 public class LoginFunc {
 
     DialogContent dc=new DialogContent();
-    @Given("Navigate to Trendyol")
-    public void navigateToTrendyol() {
-        GWD.getDriver().get("https://www.trendyol.com/");
+    @Given("Navigate to Amazon")
+    public void navigateToAmazon() {
+        GWD.getDriver().get("https://www.amazon.com/");
         GWD.getDriver().manage().window().maximize();
     }
 
     @When("Enter username and password and click login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
-        dc.findAndClick("acceptCookies");
-        dc.findAndClick("acceptCookies");
         dc.findAndClick("loginButton");
-        dc.findAndSend("email","enterYourEmail");
-        dc.findAndSend("password","enterYourPassword");
+        dc.findAndSend("email","");
+        dc.findAndClick("submitEmail");
+        dc.findAndSend("password","");
         dc.findAndClick("submitLogin");
 
     }
 
     @Then("User should be login successfully")
     public void userShouldBeLoginSuccessfully() {
-        dc.findAndContainsText("hesabim","Hesabım");
+        dc.findAndContainsText("accountAssertion","Hello");
     }
 
     @When("Enter invalid username and password")
     public void enterInvalidUsernameAndPassword() {
 
-        dc.findAndClick("acceptCookies");
-        dc.findAndClick("acceptCookies");
+
         dc.findAndClick("loginButton");
-        dc.findAndSend("email","enterWrongEmail");
-        dc.findAndSend("password","enterWrongPassword");
+        dc.findAndSend("email","something@gmail.com");
+        dc.findAndClick("submitEmail");
+        dc.findAndSend("password","1234abc");
         dc.findAndClick("submitLogin");
 
     }
 
     @Then("User should not be able to login")
     public void userShouldNotBeAbleToLogin() {
-        dc.findAndContainsText("invalidDataLogin","hatalı");
+        dc.findAndContainsText("invalidDataLogin","Important");
     }
 }

@@ -19,7 +19,7 @@ public class Hooks {
             final byte[] ss=((TakesScreenshot) GWD.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(ss, "image/png", "screenshot name");
         }
-           GWD.quitDriver();
+        //   GWD.quitDriver();
 
     }
 

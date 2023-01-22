@@ -1,7 +1,7 @@
 Feature: add to cart functionality
 
   Background:
-    Given Navigate to Trendyol
+    Given Navigate to Amazon
     When Enter username and password and click login button
     Then User should be login successfully
 

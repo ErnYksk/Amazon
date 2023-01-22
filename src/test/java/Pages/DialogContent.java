@@ -12,23 +12,27 @@ public class DialogContent extends Parent {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[text()='Giriş Yap']")
+    @FindBy(id = "nav-link-accountList")
     private WebElement loginButton;
 
-    @FindBy(id = "login-email")
+    @FindBy(id = "ap_email")
     private WebElement email;
 
-    @FindBy(id = "login-password-input")
+    @FindBy(id = "continue")
+    private WebElement submitEmail;
+
+    @FindBy(id = "ap_password")
     private WebElement password;
 
-    @FindBy(xpath = "//*[text()='Hesabım']")
-    private WebElement hesabim;
+    @FindBy(id = "signInSubmit")
+    private WebElement submitLogin;
 
-    @FindBy(xpath = "//span[text()='E-posta adresiniz ve/veya şifreniz hatalı.']")
+    @FindBy(css = "[id='nav-link-accountList']>div>span")
+    private WebElement accountAssertion;
+
+    @FindBy(xpath = "//h4[text()='Important Message!']")
     private WebElement invalidDataLogin;
 
-    @FindBy(xpath = "//button[@type='submit']//span")
-    private WebElement submitLogin;
 
     @FindBy(xpath = "//*[text()='KABUL ET']")
     private WebElement acceptCookies;
@@ -70,11 +74,11 @@ public class DialogContent extends Parent {
             case "loginButton":
                 myElement = loginButton;
                 break;
+            case "submitEmail":
+                myElement = submitEmail;
+                break;
             case "submitLogin":
                 myElement = submitLogin;
-                break;
-            case "acceptCookies":
-                myElement = acceptCookies;
                 break;
             case "searchButton":
                 myElement = searchButton;
@@ -94,8 +98,8 @@ public class DialogContent extends Parent {
 
     public void findAndContainsText(String strlement, String text) {
         switch (strlement) {
-            case "hesabim":
-                myElement = hesabim;
+            case "accountAssertion":
+                myElement = accountAssertion;
                 break;
             case "invalidDataLogin":
                 myElement = invalidDataLogin;
