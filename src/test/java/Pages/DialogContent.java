@@ -40,7 +40,9 @@ public class DialogContent extends Parent {
     private WebElement searchButton;
 
     @FindBy(css = "[data-component-type='s-search-result']")
-    private List<WebElement> searchResults;
+    public List<WebElement> searchResults;
+
+    // searchResults also used for an example here
 
     @FindBy(id = "add-to-cart-button")
     private WebElement addButton;
